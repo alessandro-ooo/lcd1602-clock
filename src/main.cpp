@@ -31,16 +31,17 @@ void retrieveData() {
 }
 
 void setup() {
+    pinMode(firstBtnPin, INPUT);
     Serial.begin(9600); 
     lcd.begin(16, 2);
-    lcd.print("time");
+    lcd.print("waiting for data...");
 }
 
 void loop() {
     if(digitalRead(firstBtnPin) == HIGH) {
-        Serial.end();
-        printMessage("Buon anno");
-        Serial.begin(9600); 
+        String message = "< scemo >";
+        char *to_send = &message[0];
+        Serial.println(to_send);
     }
 
     retrieveData();
