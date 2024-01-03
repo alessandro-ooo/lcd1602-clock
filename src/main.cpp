@@ -24,7 +24,7 @@ void retrieveData() {
         lcd.setCursor(0, 0);
         lcd.print(date);
 
-        String time = timestampString.substring(splitter+3);
+        String time = timestampString.substring(splitter+1);
         lcd.setCursor(0, 1);
         lcd.print(time);
     }
