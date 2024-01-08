@@ -24,6 +24,7 @@ Basically, when the board is connected through USB to the computer, it "awaits" 
 The weather forecast is gathered through an API call to <a href="https://openweathermap.org/">https://openweathermap.org/</a> every ten minutes using the <a href="https://curl.se/">CURL library</a>. Once the weather data is stored in Arduino, the board will keep communicating to the software "<time>" string every second and will receive time and date to display on the LCD. It'll be possible to display the weather pressing a button.
 
 ## Docs
+# CPPCOMM
 ```cpp
 void CPPCOMM(String message)
 ```
@@ -33,6 +34,7 @@ example:
 void CPPCOMM(String "<weather>")
 ```
 
+# LCDWrite
 ```cpp
 void LCDWrite(String text, int line, bool clear = false)
 ```
@@ -44,11 +46,13 @@ LCDWrite("I'm on the second row!", 1, false);
 LCDWrite("Now wipe them all!", 0, true);
 ```
 
+# refreshWeather
 ```cpp
-bool refreshWeater()
+bool refreshWeather()
 ```
 Refresh weather data every ten minutes as indicated by <a href="https://openweathermap.org/">https://openweathermap.org/</a>
 
+# retrieveData
 ```cpp
 bool retrieveData()
 ```
